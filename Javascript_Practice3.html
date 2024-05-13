@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 3</title>
+    <link rel="icon" type="x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: rgba(197, 14, 185, 0.285);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h3>this as a medhod</h3> ")
+        var person = {
+            firstName : "Pushpendra",
+            lastName : "Uikey",
+            age : 19,
+            country : "India",
+            greet: function() {
+                document.write("Welcome " + this.firstName + " " + this.lastName);
+            }
+        };
+        person.greet()
+    </script>
+</body>
+</html>
+
+<!--
+    Objects are used to store values, they can store multiple values. Store value in a key-value pair.
+
+    Object methods: methods are similar to functions. They enable some action to be performed on an object. 
+    Difference between a function and method is that a method associated with the object and it can be 
+    accessed using the dot operator.
+-->
+
+<!--
+                                        ARRAY 
+        - Indexing starts from 0 and goes to n-1.
+        Properties of Array:
+        constructor: To return the function which created prototype for Array object.
+        length: To set or return the count of elements in an array.
+        prototype: To add properties and methods to arrays. 
+
+        Methods of Array:
+        concat():          To concatenate two or more arrays and return a copy of the combined arrays.
+        indexOf():         Find the array for an element and return its position in the array.
+        join():            Joins all elements of an array into a single string.
+        lastindexOf():     To return the index of the last element of an array.
+        pop():             To remove the last element of an array and returns that element.
+        push():            To add new elements to the array and return the new length. 
+                           Newly added elements will be present at the end of the array.
+        reverse():         To reverse the order of the elements of the array.
+        shift():           To remove the first element of an array and return removed element.
+        slice():           To select a part of an array and return the new array.
+        sort():            To sort the elements of an array. 
+        splice():          To add/remove element from an array.
+        toString():        To remove an array to a string and return its result.
+        unshift():         To add new elements to the beginning of an array, and returns the new length 
+        valueOf():         To return the primitive value of an array.
+-->
+
+<!--
+    toString() method is used to represent an object as string.
+    Syntax: objectName.toString();
+
+    Array: To convert an array into string.
+    Boolean: If 'true' then returns the string "true", else return the string "false".
+    Date: return the textual representation of the date.
+    Error: To return a string displaying the corresponding error message.
+    Function: Whatever the function returns convert it into string then return.
+    Number: To return the textual representation of the number.
+    String: To return the value of the String object.
+-->
+
+<!--
+    valueof() method is used to return the primitive type of object.
+    Array: To return the instance of an array.
+    Boolean: To return the Boolean value.
+    Date: To return the stored time value in milliseconds since midnight, January1, 1970 UTC
+    Fuction: To return the function itself.
+    Number: To return the numeric value.
+    Object: To return the object (this is the defualt value)
+    String: To return the string value.
+-->
+
+<!--
+    "this" is a keyword in javascript. The value of "this" is not determined when it is declared instead it's evaluated during runtime.
+    When a function is called from the object using either dot or square bracket, this refers to current object.
+-->

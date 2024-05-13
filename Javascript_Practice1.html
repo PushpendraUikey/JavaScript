@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="icon" type="x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Alert Box Example </h1>
+    <button onclick="alertfunction()">Alert</button> 
+    <button onload="alertfunction()">Alert</button> 
+
+    <h1>Prompt Dialog Example </h1>
+    <button onclick="Promptfunc()">Prompt Here</button>
+    <p id="display"></p><br>
+
+    <h1>Confirmation Dialog Example </h1>
+    <button onclick="Dialog_fun()">Dialog here</button>
+    <h2 id="Display1"></h2>
+
+    <h1>Arithmetic Operations</h1>
+    <p id="sum"></p>
+    <p id="subs"></p>
+    <p id="multiply"></p>
+    <p id="division"></p>
+    <p id="mod"></p>
+    <p id="op1"></p>
+    <p id="op2"></p>
+    <p id="op3"></p>
+    <p id="op4"></p>
+    <p id="op5"></p>
+    <p id="op6"></p>
+
+    <h1>String Operators </h1>
+    <p id="ope1"></p>
+    <p id="ope2"></p>
+
+    <p id="ope3"></p>
+    <p id="ope4"></p>
+    <p id="ope5"></p>
+    <p id="ope6"></p>
+    <p id="ope7"></p>
+    <p id="ope8"></p>
+
+    <p id="op_and"></p>
+    <p id="op_or"></p>
+    <p id="op_not"></p>
+
+    <script>
+        document.write("Hello world!");
+        var x;
+        var sum;
+        var firstname;
+        var a, b, c, d;
+        var m=10;
+        a = 23; b=389;
+        firstname="Harry";
+        document.write(firstname);
+
+        function alertfunction(){
+            alert("You are looking beautiful!")
+        }
+        function Promptfunc(){
+            var strUser;
+            strUser=prompt("Enter username", "Pushpendra");
+            document.getElementById("display").innerHTML="Hello "+strUser+"!";
+        }
+        function Dialog_fun(){
+            var userResponse, message;
+            userResponse=confirm("Do you want to continue learning Javascrit?");
+            if(userResponse==true){
+                message="Happy Learning!" 
+            }
+            else {
+                message="Choose another language! " 
+            }
+            document.getElementById("Display1").innerHTML=message;
+        }
+
+        var num1=10,num2=98;
+        document.getElementById("sum").innerHTML="Addition of "+num1+" and "+num2+" is "+(num1+num2);
+        document.getElementById("subs").innerHTML="Substraction of "+num1+" and "+num2+" is "+(num1-num2);
+        document.getElementById("multiply").innerHTML="Multiplication of "+num1+" and "+num2+" is "+(num1*num2);
+        document.getElementById("division").innerHTML="Division of "+num1+" and "+num2+" is "+(num1/num2);
+        document.getElementById("mod").innerHTML="Modulus of "+num2+" and "+num1+" is "+(num2%num1);
+
+        num1=num2;
+        document.getElementById("op1").innerHTML="num1=num2 gives "+num1;
+        num1+=num2;
+        document.getElementById("op2").innerHTML="num1+=num2 gives "+num1;
+        num1-=num2;
+        document.getElementById("op3").innerHTML="num1-=num2 gives "+num1;
+        num1*=num2;
+        document.getElementById("op4").innerHTML="num1*=num2 gives "+num1;
+        num1/=num2;
+        document.getElementById("op5").innerHTML="num1/=num2 gives "+num1;
+        num1%=num2;
+        document.getElementById("op6").innerHTML="num1%=num2 gives "+num1;
+
+        c="Pushpendra"; d="Uikey";
+        document.getElementById("ope1").innerHTML=c+d;
+        c+=d;
+        document.getElementById("ope2").innerHTML=c;
+
+        sum=9.0;
+        // == operator 
+        document.getElementById("ope3").innerHTML=" sum == 9 is "+(sum==9);
+        // === operator 
+        document.getElementById("ope4").innerHTML=" sum === 9 is "+(sum === 9);
+        // != operator 
+        document.getElementById("ope5").innerHTML=" sum !=10 is "+(sum != 10);
+        // !== operator Remember, If the types are equal value diff-> true
+        // If the types are same and value too -> false 
+        // If types diff and value diff -> true{ shows priority to the value } 
+        // If types diff and value same -> false 
+        document.getElementById("ope6").innerHTML=" sum !== 9.0 is "+(sum !== 0);
+        
+        var val1=6, val2=9, result;
+        result = (val1>val2)? 50:60;
+        document.getElementById("ope7").innerHTML="((Val1 > Val2) ? 50:60 => "+result;
+        result = (val1<val2)?50:60;
+        document.getElementById("ope8").innerHTML="(val1 < val2) ? 50:60 => "+ result;
+        
+        document.getElementById("op_and").innerHTML=" AND "+"<br>"+"Expression (val1<7 && val2>8) is " + (val1<7 && val2>8) +
+            "<br>"+"Expression (val1<10 && val2<9) is "+ (val1<10 && val2<9);
+        document.getElementById("op_or").innerHTML=" OR "+"<br>"+"Expression (val1<7 || val2>8) is " + (val1<7 || val2>8) +
+            "<br>"+"Expression (val1<10 || val2<9) is "+ (val1<10 || val2<9);
+        document.getElementById("op_not").innerHTML=" NOT "+"<br>"+"Expression (!val2>8) is " + (!val2>8) +
+            "<br>"+"Expression ( !val2<9) is "+ (!val2<9);
+
+    </script>
+
+</body>
+</html>
+
+<!--
+    Logical operation on two variables
+    &&      exp1 && exp2     Return true if both are true 
+    ||      exp1 && exp2     Return true if either of them is true
+    !       !exp1            Return true if exp1 is false    
+-->
+<!--
+    Comparision operators are used to compare two javascript variables. The expressions results a Boolean value i.e. either true or false
+
+    {==}  Returns true if the values of two variables are equal.
+    {===}  Returns true if the values and types of two variables are equal.
+    {!=}  Returns true if the value of the two variables are not equal.
+    {!==}  Returns true if the value and types of the two variables are not equal.
+    {>}  Returns true if the value of first is greater than second. 
+    {<}  Returns true if the value of the second is greater than first.
+    Same {<=} and {>=}
+-->
+<!--
+    Remember to put the script at the HTML code as by the time it will run other things are already loaded.
+-->
+<!--
+    Arithmetic Operators are used to carry out Arithmetic calculations.
+    addition(+),subtraction(-),multiplication(*),division(/)
+-->
+<!--
+    confirm() method is used to display a dialog box with a message. OK and Cancel button.
+    confirmation to proceed or cancel the operation.
+    syntax: confirm(message);
+    OK returns true while cancel returns false.
+-->
+<!--
+    prompt() method is used to display message box which prompts for some user input
+        OK and CANCEL buttons are provided in this dialog box.
+        Once the dialog is open the web page loses its focus and so now the dialog box is in focus.
+        syntax is: "prompt(text, defualtText)" text holds the string to be displayed in the dialog box 
+        defualtText: used to display the default input text.
+-->
+<!--
+    <button> is used to get the button in the page and if you want something 
+    to be clicked on it, use "onclick" attribute and give some name to the 
+    button. 
+-->
+<!--
+    Statement execution in the order in which they are written.
+    Multiple white spaces are ignored.
+    Statements are seperated by a semicolon(;) at the end.
+-->
+<!--
+    Javascript codes are written inside the script tag of html file. You need to 
+    set the type attribute of the <script> to "text/javascript".
+    Important: Declare the variable before using it.
+    in javascript var's are declared using {var} followwed by using the variable 
+    name. Not required to mention the type of value as it is going to handle 
+    javascript will handle it by itself.
+
+    -Keyword like Boolean, byte, char, class, null, void etc. cannot be used as 
+    a variable name.
+    -Variable name should start with an alphabet or an underscore character. It 
+    cannot begin with numbers.
+    -Javascript variables are case sensitive.
+    -Variables in javascript are declared only once for its entire lifecycle.
+    -Scope can be local or global.
+-->

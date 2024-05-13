@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 2</title>
+    <link rel="icon" type="x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: rgba(199, 92, 10, 0.285);
+        }
+    </style>
+</head>
+<body>
+    <h3>Bitwise operation</h3>
+    <p id="op1"></p>
+    <p id="op2"></p>
+    <p id="op3"></p>
+    <p id="op4"></p>
+    <p id="op5"></p>
+    <p id="op6"></p><br>
+
+    <h3>Typeof Operation </h3>
+    <p id="op"></p><br>
+
+    <h3>Delete Operation </h3>
+    <p id="deleteop"></p><br>
+
+    <h3>in operator </h3>
+    <p id="inop1"></p><br>
+
+    <h3>InstanceOf Operator </h3>
+    <p id="instop1" ></p><br>
+
+    <h3>The if statement example</h3>
+    <button onclick="numfunc()">Enter a Number </button>
+    <p id="display"></p><br>
+
+    <h3>The if statement example</h3>
+    <button onclick="numfunc1()">Enter a Number </button>
+    <p id="display1"></p><br>
+
+    <h3>For/in Loop </h3>
+    <p id="eg"></p><br>
+
+    <h3>The While Loop </h3>
+    <button onclick="numfunc2()">Enter a number </button>
+    <p id="demo"></p><br>
+
+    <h3>Switch Example </h3>
+    <button onclick="numfunc3()">Enter a day!</button>
+    <p id="day"></p><br>
+
+    <script type="text/javascript">
+        var a=4,b=5,result;
+        result = (a&b);
+        document.getElementById("op1").innerHTML="(a & b) is " + result;
+        result = (a|b);
+        document.getElementById("op2").innerHTML="(a | b) is "+ result;
+        result = (a ^ b);
+        document.getElementById("op3").innerHTML="(a ^ b) is "+ result;
+        result = (~ b);
+        document.getElementById("op4").innerHTML="(~ b ) is " + result;
+        result = (a << b);
+        document.getElementById("op5").innerHTML="(a << b) is " + result;
+        result = (a >> b);
+        document.getElementById("op6").innerHTML="(a >> b) is " + result; 
+
+        document.getElementById("op").innerHTML = 
+                typeof "Harry" + "<br>" +
+                typeof 3 + "<br>" +
+                typeof false + "<br>" +
+                typeof [1,2,3,4] + "<br>" +
+                typeof {name: 'John', age: 34} + "<br>" +
+                typeof new Date() + "<br>" + 
+                typeof function() {} + "<br>" +
+                typeof myCar + "<br>" +
+                typeof NaN + "<br>" +
+                typeof null;
+
+        var employee={empId:10002, firstName:"Puspendra", lastName:"Uikey"}
+        delete employee.lastName;
+        var deleteop = document.getElementById("deleteop");
+        deleteop.innerHTML = "Employee ID: " + employee.empId + "<br>";
+        deleteop.innerHTML += "First Name: " + employee.firstName + "<br>";
+        deleteop.innerHTML += "Last Name: " + employee.lastName ;
+
+        var inop1 = document.getElementById("inop1");
+        inop1.innerHTML = "First name exists: " + ("firstName" in employee) + "<br>" ;
+        inop1.innerHTML += "Last name exists: " + ("lastName" in employee) + "<br>" ;
+        inop1.innerHTML += "Designation exists: " + ("designation" in employee) ;
+
+        var arr_fruits = ["Orange", "Apple", "Grapes" ]
+        var instop1 = document.getElementById("instop1");
+        instop1.innerHTML = "employee isntanceof object: " + (employee instanceof Object) +"<br>";
+        instop1.innerHTML += "employee isntanceof array: " + (employee instanceof Array) + "<br>";
+        instop1.innerHTML += "arr_fruits instanceof object: " + (arr_fruits instanceof Object) + "<br>";
+        instop1.innerHTML += "arr_fruits instanceof array; " + (arr_fruits instanceof Array) ;
+
+        function numfunc(){
+            var num1, message;
+            num1 = prompt("Enter an integer")
+            if(num1>0){
+                message = "You have entered a positive integer.";
+            }
+            if(num1 < 0){
+                message = "You have entered a negative integer.";
+            }
+            if(num1 == 0){
+                message = "You have entered a zero.";
+            }
+            document.getElementById("display").innerHTML = message;
+        }
+
+        function numfunc1(){
+            var num1, message;
+            num1 = prompt("Enter an integer")
+            if(num1>0){
+                message= "You have entered a positive integer";
+            }
+            else{
+                message = "You have entered a negative, or zero, or any other character than postive integer.";
+            }
+            document.getElementById("display1").innerHTML = message;
+        }
+
+        document.write("<h3>"+"The for loop!"+"</h3>")
+        var input;
+        document.write("Entering the loop!" + "<br>");
+        for(input=1; input<=5; input++){
+            document.write("The number is " + input + "<br>");
+        }
+
+        var info="";
+        var student={firstName: "Pushpendra", lastName: "Uikey", grade: "A"}
+        var x;
+
+        // Iteration occurs through the values and not the keys.
+        for (x in student){
+            info += student[x] + " " ;
+        }
+        document.getElementById("eg").innerHTML=info;
+
+        function numfunc2(){
+            var text="";
+            num = prompt("Enter a positive integer only");
+            if(num>0){
+                while(num>=0){
+                    text += "<br> Value of num: " + num;
+                    num--;
+                }
+            }
+            else{
+                text = "Enter a valid postive integer."
+            }
+            document.getElementById("demo").innerHTML=text;
+        }
+
+        function numfunc3(){
+            var input, message;
+            input = prompt("Enter a day.");
+            switch(input){
+                case "Sunday":
+                    message = "It is a Sunday!";
+                    break;
+                case "Monday":
+                    message = "It is a Monday!";
+                    break;
+                case "Tuesday":
+                    message = "It is a Tuesday!";
+                    break;
+                case "Wednesday":
+                    message = "It is a Wednesday!";
+                    break;
+                case "Thursday":
+                    message = "It is a Thursday!";
+                    break;
+                case "Friday":
+                    message = "It is a Friday!";
+                    break;
+                case "Saturday":
+                    message = "It is a Saturday!";
+                    break;
+                default:
+                    message = "Enter a valid date!";
+            }
+            document.getElementById("day").innerHTML=message;
+        }
+    </script>
+</body>
+</html>
+
+<!--
+    -> function is a set of code written to perform specific tasks in the program.
+    -> function can be written once and executed multiple times, enabling execution mulitple times without 
+       rewriting the code again and again.
+    -> function are defined using the keyword "function", and also you can use arguments inside the paranthesis,
+       Parameters behaves as a local variable, and their scope remains limited to the curly braces of the function.
+       function can include "return" statement to return any value.
+    -> If you want to write something in the webpage, from within the script, then use "document.write("{string to print}")"
+-->
+
+<!--
+    The switch statement is similar to else if statement, helps in checking multiple conditions.
+    break keyword is used to denote the end of a specific case.
+    do-while loop is same as the while loop just a minute difference is there, that is condition is checked after executing the 
+    statement, and is checked to decide whether to proceed with the same loop again or not.
+    do
+    {
+        statement(s);
+    }while(condition);
+
+    While loop is used to execute a block of statements repetatively until a condition is true and it stops automatically 
+    once the condition is false
+-->
+<!--
+    Loops are used to particular block of code multiple times.
+    for(initialise; condition; iterate){}
+    The if statement tells the javascript compiler to execute the code only if the condition is true.
+    similar C++ logic for if-else, if-else if-else statements.
+-->
+<!--
+    in operator is used to check whether a particular property is present within an object. If the property exists then return true 
+    else return false. in operator can also be used to check the property of predefined objects like "length" in String object. 
+-->
+<!--
+    delete operator is used to delete a property from a JavaScript object.
+    Value of the property and the property itself gets deleted using the delete operator.
+-->
+
+<!--
+    typeof operator returns the data type of the variable, function or an object. It returns a string value.
+-->
+
+<!--
+    Javascript supports the following type of bitwise operations on data at bit level. However it returns the result in numericals value
+    Operator                Usage
+    
+    Bitwise AND(&)          To perform boolean AND operation in each bit of variable 
+    Bitwise OR(|)           OR operation on each bit of its variable.
+    Bitwise XOR(^)          either first operand is true or second operand is true but not both 
+    Bitwise NOT(~)          Reverses all the bit in the operand 
+    Left Shift(<<)          Shift all bits in the first operand to left by the number of bits in the right operand.
+    Right Shift(>>)         Shift the value of the left operand to right by the number of bits specified by the right operand.
+    Right Shift with zero(>>>) same as Right Shift operator, except that the bits shifted towards left are always zero.
+-->
